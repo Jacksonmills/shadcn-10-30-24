@@ -16,6 +16,9 @@ import {
   BreadcrumbPage,
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
+import Image from "next/image";
+import { ScrollArea } from "@/components/ui/scroll-area";
+import { NavigationMenuDemo } from "@/components/nav-menu";
 
 const geistSans = localFont({
   src: "./fonts/GeistVF.woff",
@@ -41,22 +44,18 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased overflow-hidden`}
       >
         <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
-          <Breadcrumb>
-            <BreadcrumbList>
-              <BreadcrumbItem className="hidden md:block">
-                <BreadcrumbLink href="#">
-                  Building Your Application
-                </BreadcrumbLink>
-              </BreadcrumbItem>
-              <BreadcrumbSeparator className="hidden md:block" />
-              <BreadcrumbItem>
-                <BreadcrumbPage>Data Fetching</BreadcrumbPage>
-              </BreadcrumbItem>
-            </BreadcrumbList>
-          </Breadcrumb>
+          <Image
+            className="dark:invert"
+            src="https://nextjs.org/icons/next.svg"
+            alt="Next.js logo"
+            width={90}
+            height={19}
+            priority
+          />
+          <NavigationMenuDemo />
         </header>
         <SidebarProvider>
           <AppSidebar />
@@ -78,7 +77,7 @@ export default function RootLayout({
                 </BreadcrumbList>
               </Breadcrumb>
             </header>
-            {children}
+            <ScrollArea className="h-[calc(100vh-4rem)]">{children}</ScrollArea>
           </SidebarInset>
         </SidebarProvider>
       </body>

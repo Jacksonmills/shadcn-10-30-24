@@ -149,7 +149,7 @@ const data = {
 
 export function AppSidebar({ ...props }: React.ComponentProps<typeof Sidebar>) {
   return (
-    <Sidebar className="top-16" variant="inset" {...props}>
+    <Sidebar className="top-[--header-height]" variant="inset" {...props}>
       <SidebarHeader>
         <VersionSwitcher
           versions={data.versions}

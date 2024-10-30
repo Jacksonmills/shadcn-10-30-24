@@ -59,7 +59,7 @@ export default function RootLayout({
         </header>
         <SidebarProvider>
           <AppSidebar />
-          <SidebarInset>
+          <SidebarInset className="h-full peer-data-[variant=inset]:min-h-[calc(100svh-theme(spacing.4)-4rem)]">
             <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
               <SidebarTrigger className="-ml-1" />
               <Separator orientation="vertical" className="mr-2 h-4" />
@@ -77,7 +77,9 @@ export default function RootLayout({
                 </BreadcrumbList>
               </Breadcrumb>
             </header>
-            <ScrollArea className="h-[calc(100vh-4rem)]">{children}</ScrollArea>
+            <ScrollArea className="h-[calc(100svh-theme(spacing.4)-8rem)]">
+              {children}
+            </ScrollArea>
           </SidebarInset>
         </SidebarProvider>
       </body>

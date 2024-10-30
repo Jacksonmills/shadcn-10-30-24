@@ -53,7 +53,7 @@ export default function RootLayout({
           } as React.CSSProperties
         }
       >
-        <header className="flex h-16 shrink-0 items-center gap-2 border-b px-4">
+        <header className="flex h-[--header-height] shrink-0 items-center gap-2 border-b px-4">
           <Image
             className="dark:invert"
             src="https://nextjs.org/icons/next.svg"
